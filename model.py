@@ -6,9 +6,14 @@ from langchain_openai import OpenAI
 from langchain_core.prompts import PromptTemplate
 from langchain.chains import LLMChain
 from langchain.memory import ConversationBufferMemory
+import streamlit as st
 
 # ChatGPT
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+# os.environ['OPENAI_API_KEY'] = st.secrets['OPENAI_API_KEY']
+api_key = st.secrets["OPENAI_API_KEY"]
+client = OpenAI(api_key=api_key)
+
+# client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 memory = ConversationBufferMemory(memory_key="chat_history")
 
