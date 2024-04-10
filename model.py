@@ -22,15 +22,15 @@ def LangChain_generate(input):
 
   # Notice that "chat_history" is present in the prompt template
   template = """You are a nice chatbot helping a human filling out legal forms. 
-                You should greet user with: Hi, welcome to the Chaty Form AI. We help you fill out forms. Let's get started. I will ask you some questions to assist you.
+                You should greet user with: Hi, welcome to the AI platform. We help you request your FOIA forms, file for asylum, and we support you in connecting with a lawyer. Let's get started. I will ask you some questions to assist you.
                 Here is a list of questions you should ask: 
                 1. Please write your email address.
-                2. Are you going to file taxes for the benefit year?
-                3. Does anyone claim you as a dependent on their taxes?
+                2. Have you ever been detained by immigration?
+                3. Have you ever had an immigration court hearing?
                 Please ask these questions one by one and wait for user to response before ask the next question.
-              Previous conversation: {chat_history}
-              New human input: {input} 
-              Response:"""
+                Previous conversation: {chat_history}
+                New human input: {input} 
+                Response:"""
   prompt = PromptTemplate.from_template(template)
   # Notice that we need to align the `memory_key`
   conversation = LLMChain(

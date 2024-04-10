@@ -7,7 +7,7 @@ import model
 ######## Chat Interface ##########
 with st.sidebar:
     option_form = st.selectbox(
-        'Which form would you like to be assist with?', ('Medi-Cal', 'G-639', 'I-589', 'N-400'))
+        'Which form would you like to be assist with?', ('G-639', 'I-589', 'N-400'))
     st.write('You selected:', option_form)
 
     option_lang = st.selectbox(
